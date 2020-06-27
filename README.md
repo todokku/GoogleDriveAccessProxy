@@ -29,11 +29,12 @@ Instead of Google API token service user must provide JWT token with payload lik
 This token grants access to 2 directories: full access to `Full/Path/To/Folder` on drive `main`, and read-only access to `Pictures/IRL` on drive `shared_media`. Also, this token has an expiration date.
 
 ### Config
++ Available drive types: main_drive, shared_drive.
++ Drive `token` is your Google app token.
++ If your token leaked you can ban it in `banned_tokens`.
 ```json
 {
 	"secret": "your super secret key for validating JWT tokens",
-	// Available types: main_drive, shared_drive
-	// Token is your Google app token
 	"drives": [
 		{
 			"name": "main",
@@ -48,7 +49,6 @@ This token grants access to 2 directories: full access to `Full/Path/To/Folder` 
 			"token": "eyJhbGciOiJIUzI1N.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6DIyfQ.SflKxwRJSMeKKF2dQssw5c"
 		}
 	],
-	// If your token leaked you can ban it here.
 	"banned_tokens": [
 		"eyJhbGciOiJIUzI1N.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6DIyfQ.SflKxwRJSMeKKF2dQssw5c"
 	]
